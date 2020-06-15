@@ -1,0 +1,21 @@
+.Empty_main {
+  display: inline;
+  background-color: #f7c975; }
+  .Empty_main:hover {
+    background-color: #f1eebc; }
+
+.Occupied_main {
+  display: inline;
+  background-color: #6c4f30; }
+  .Occupied_main:hover {
+    background-color: #9b8f74; }
+
+.Empty {
+  display: inline;
+  background-color: #f7c975; }
+
+.Occupied {
+  display: inline;
+  background-color: #6c4f30; }
+
+/*# sourceMappingURL=Cell.module.css.map */

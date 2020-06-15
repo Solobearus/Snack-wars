@@ -1,0 +1,21 @@
+.City {
+    align-self: center;
+    justify-self: center;
+    // margin: auto;
+    width: 450px;
+    height: 450px;
+    display: grid;
+    grid-template-columns: repeat(20, auto);
+    grid-template-rows: repeat(20, auto);
+    border-style: outset;
+    border-width: 5px;
+    border-color: rgb(137, 90, 4);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    *{
+        border-style: outset;
+        border-width: 1px;
+        border-color: orange;
+    }
+}

@@ -1,0 +1,55 @@
+.GameScreen {
+  display: grid;
+  grid-template-areas: '. Side1 Container Side2 .';
+  grid-template-columns: auto min-content max-content min-content auto;
+  grid-gap: 10px;
+  background-image: url("../../Images/bg2.jpg");
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  background-color: #282c34;
+  height: 100vh; }
+  .GameScreen .Side1 {
+    grid-area: Side1; }
+  .GameScreen .Side2 {
+    grid-area: Side2; }
+  .GameScreen .Container {
+    display: grid;
+    grid-template-rows: 80px max-content auto;
+    grid-gap: 20px;
+    grid-area: Container;
+    justify-self: center;
+    height: 100%; }
+    .GameScreen .Container .Title {
+      display: grid;
+      align-self: center;
+      grid-template-columns: max-content auto; }
+      .GameScreen .Container .Title h1 {
+        margin: auto;
+        font-size: 3.5em;
+        font-family: myFirstFont; }
+      .GameScreen .Container .Title img {
+        padding: 5px;
+        margin: 5px;
+        background-color: #f7c975;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        /* 1:1 Aspect Ratio */
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); }
+    .GameScreen .Container .Buttons .group {
+      display: grid;
+      grid-template-rows: 50px 50px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 5px; }
+      .GameScreen .Container .Buttons .group * {
+        display: grid;
+        justify-items: center;
+        align-items: center; }
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(../../fonts/Fujimaru-Regular.ttf); }
+
+/*# sourceMappingURL=GameScreen.module.css.map */

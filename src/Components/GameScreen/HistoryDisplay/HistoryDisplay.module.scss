@@ -1,0 +1,71 @@
+.HistoryDisplay {
+    display: grid;
+    grid-template-rows: 80px max-content auto;
+    // grid-template-rows:  '. display .';
+    grid-template-columns: 1fr;
+    grid-row-gap: 5px;
+    font-family: myFirstFont;
+    font-size: 1.2em;
+    
+    .display{
+        background-color: rgb(161, 134, 42);
+        grid-area: display;
+
+        display: grid;
+        grid-template-rows: 0.1fr 0.95fr;
+        grid-template-columns: 0.95fr;
+        
+        justify-content: center;
+        // align-content: center;
+        
+        width: 150px;
+        height: 450px;
+        border-style: outset;
+        border-width: 5px;
+        border-color: rgb(137, 90, 4);
+
+        -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+        justify-self: center;
+        
+        .list{
+            background-color: rgb(243, 190, 92);
+            display: grid;
+            grid-row-gap: 30px;
+            padding-top: 10px; 
+            padding-bottom: 10px; 
+            overflow:hidden; 
+            overflow-y:scroll; 
+            grid-template-rows: repeat(auto-fit, 100px);
+            border-style: outset;
+            border-width: 2px;
+            border-color: rgb(87, 58, 5);
+        }
+    }
+} 
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(../../../fonts/Fujimaru-Regular.ttf);
+  }
+
+ /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #8b6241; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(100, 68, 9); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
