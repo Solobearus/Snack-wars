@@ -16,12 +16,12 @@
         grid-template-rows: 0.4fr 1.8fr 0.4fr;
         background-image: url('../../Images/bg2.jpg');
         background-size: cover; /* Resize the background image to cover the entire container */
-        background-color: #282c34;
+        background-color: var(--title-font-main);
         min-height: 100vh;
         justify-items: center;
         align-items: center;
         font-size: calc(10px + 8vmin);
-        color: #282c34;
+        color: var(--title-font-main);
         
         p{
             margin: 0px;

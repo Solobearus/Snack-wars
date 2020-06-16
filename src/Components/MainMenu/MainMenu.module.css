@@ -12,12 +12,12 @@
   background-image: url("../../Images/bg2.jpg");
   background-size: cover;
   /* Resize the background image to cover the entire container */
-  background-color: #282c34;
+  background-color: var(--title-font-main);
   min-height: 100vh;
   justify-items: center;
   align-items: center;
   font-size: calc(10px + 8vmin);
-  color: #282c34; }
+  color: var(--title-font-main); }
   .MainMenu .App_header p {
     margin: 0px;
     font-family: myFirstFont; }

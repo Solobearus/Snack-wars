@@ -6,7 +6,7 @@
   font-family: myFirstFont;
   font-size: 1.2em; }
   .SideList .display {
-    background-color: #a1862a;
+    background-color: var(--medium-main);
     grid-area: display;
     display: grid;
     grid-template-rows: 0.1fr 0.95fr;
@@ -22,7 +22,7 @@
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
     justify-self: center; }
     .SideList .display .list {
-      background-color: #f3be5c;
+      background-color: var(--medium-main);
       display: grid;
       grid-row-gap: 30px;
       padding-top: 10px;
@@ -32,7 +32,7 @@
       grid-template-rows: repeat(auto-fit, 100px);
       border-style: outset;
       border-width: 2px;
-      border-color: #573a05; }
+      border-color: var(--dark-main); }
 
 @font-face {
   font-family: myFirstFont;
@@ -43,14 +43,14 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #8b6241; }
+  background: var(--medium-main); }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #644409; }
+  background: var(--dark-main); }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; }
+  background: var(--darkest-main); }
 
 /*# sourceMappingURL=SideList.module.css.map */

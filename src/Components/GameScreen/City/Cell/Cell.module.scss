@@ -1,28 +1,28 @@
 
 .Empty_main{
     display: inline;
-    background-color: rgb(247, 201, 117); 
+    background-color: var(--light-main); 
     
     &:hover{
-        background-color: rgb(241, 238, 188)
+        filter: brightness(60%);
     }
 }
 
 .Occupied_main{
     display: inline; 
-    background-color: rgb(108, 79, 48); 
+    background-color: var(--dark-main); 
     
     &:hover{
-        background-color: rgb(155, 143, 116); 
+        filter: brightness(60%);
     }
 }
 
 .Empty{
     display: inline;
-    background-color: rgb(247, 201, 117); 
+    background-color: var(--light-main); 
 }
 
 .Occupied{
     display: inline;
-    background-color: rgb(108, 79, 48); 
+    background-color: var(--dark-main); 
 }

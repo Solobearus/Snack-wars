@@ -1,21 +1,21 @@
 .Empty_main {
   display: inline;
-  background-color: #f7c975; }
+  background-color: var(--light-main); }
   .Empty_main:hover {
-    background-color: #f1eebc; }
+    filter: brightness(60%); }
 
 .Occupied_main {
   display: inline;
-  background-color: #6c4f30; }
+  background-color: var(--dark-main); }
   .Occupied_main:hover {
-    background-color: #9b8f74; }
+    filter: brightness(60%); }
 
 .Empty {
   display: inline;
-  background-color: #f7c975; }
+  background-color: var(--light-main); }
 
 .Occupied {
   display: inline;
-  background-color: #6c4f30; }
+  background-color: var(--dark-main); }
 
 /*# sourceMappingURL=Cell.module.css.map */

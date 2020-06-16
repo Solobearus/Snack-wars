@@ -55,8 +55,6 @@ class GameEngine {
         //We save the current grid to cityTurnHistory
         const cityTurnToPush = this.currentCity.getCityGrid()
 
-        console.log(cityTurnToPush)
-        
         this.cityTurnHistory.push([...cityTurnToPush]);
         //toggleCell
         this.currentCity.toggleCell(rowindexcell, columnindexcell);
