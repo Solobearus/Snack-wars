@@ -23,7 +23,7 @@ class City {
     //This is how we clear the city
     clearCity() {
         let newCityGrid = this.initializeCityGrid();
-        
+
         for (let i = 0; i < this.HEIGHT_OF_CITY; i++) {
             for (let j = 0; j < this.WIDTH_OF_CITY; j++) {
                 //set the cell in {i,j} to be false
@@ -63,7 +63,7 @@ class City {
     }
 
     //run one iteration on all the cells of the grid
-    runInteractions(allowWrapping){
+    runInteractions(allowWrapping) {
         let newCityGrid = this.initializeCityGrid();
 
         for (let i = 0; i < this.HEIGHT_OF_CITY; i++) {
@@ -81,29 +81,29 @@ class City {
         let open = this.cityGrid[row][column];
         let result = open;
         let openRamensPlaces = 0;
-        
+
         for (let i = -1; i <= 1; i++) {
             for (let j = -1; j <= 1; j++) {
                 if (!(i === 0 && j === 0)) {
-                    if(allowWrapping){
+                    if (allowWrapping) {
                         let offSetx = 0;
                         let offSety = 0;
 
-                        if(row + i <= -1){
+                        if (row + i <= -1) {
                             offSetx += this.HEIGHT_OF_CITY;
-                        }else if(row + i >= this.HEIGHT_OF_CITY){
+                        } else if (row + i >= this.HEIGHT_OF_CITY) {
                             offSetx -= this.HEIGHT_OF_CITY;
                         }
-                        if(column + j <= -1){
+                        if (column + j <= -1) {
                             offSety += this.WIDTH_OF_CITY;
-                        }else if(column + j >= this.WIDTH_OF_CITY){
+                        } else if (column + j >= this.WIDTH_OF_CITY) {
                             offSety -= this.WIDTH_OF_CITY;
                         }
-                        
+
                         if (this.cityGrid[row + i + offSetx][column + j + offSety]) {
-                            openRamensPlaces++; 
+                            openRamensPlaces++;
                         }
-                    }else{
+                    } else {
                         if ((row + i > -1 && row + i < this.HEIGHT_OF_CITY) && (column + j > -1 && column + j < this.WIDTH_OF_CITY)) {
                             if (this.cityGrid[row + i][column + j]) {
                                 openRamensPlaces++;
@@ -120,7 +120,7 @@ class City {
             } else {
                 result = false;
             }
-        }else if (openRamensPlaces === 3) {
+        } else if (openRamensPlaces === 3) {
             result = true;
         }
 
@@ -128,9 +128,12 @@ class City {
     }
 
     //toggle the value of a given cell
-    toggleCell(rowindexcell,columnindexcell){
-        let tmp = this.cityGrid[rowindexcell][columnindexcell];
-        this.cityGrid[rowindexcell][columnindexcell] = !tmp;
+    toggleCell(rowindexcell, columnindexcell) {
+        let newCityGrid = this.setCityGrid(this.cityGrid);
+
+        let tmp = newCityGrid[rowindexcell][columnindexcell];
+        newCityGrid[rowindexcell][columnindexcell] = !tmp;
+
     }
 
     //sets single cell at {row, column} to the given value
@@ -143,6 +146,20 @@ class City {
         return this.cityGrid;
     }
 
+    //returns the cityGrid
+    getNewCityGrid() {
+        let newCityGrid = this.initializeCityGrid();
+
+        console.log(this.cityGrid[0][0])
+        for (let i = 0; i < this.WIDTH_OF_CITY; i++) {
+            for (let j = 0; j < this.HEIGHT_OF_CITY; j++) {
+                newCityGrid[i][j] = this.cityGrid[i][j]
+            }
+        }
+
+        return newCityGrid;
+    }
+
     setCityGrid(cityGridToSet) {
         let newCityGrid = this.initializeCityGrid();
 
@@ -153,7 +170,7 @@ class City {
             }
         }
         this.cityGrid = newCityGrid;
-        
+
         return newCityGrid;
     }
 }

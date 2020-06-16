@@ -5,45 +5,36 @@ class GameEngine {
 
     currentTurn;
     currentCity;
-    cityTurnHistory;    
+    cityTurnHistory;
 
-    constructor(){
-        console.log("fuckfuck");
-        
+    constructor() {
         this.initializeGame();
     }
 
     //Initialize Game
-    initializeGame(){
-        console.log("fuckfuck");
+    initializeGame() {
         this.currentTurn = 0;
         this.currentCity = new City();
         this.cityTurnHistory = [];
-        console.log(this.cityTurnHistory);
-        // this.cityTurnHistory.push(this.currentCity.getCityGrid());
     }
 
     //this is the nextTurn logic
-    nextTurn(allowWrapping){
-        // console.log(this.currentTurn);
+    nextTurn(allowWrapping) {
 
         //We save the current grid to cityTurnHistory
-        this.cityTurnHistory.push(this.currentCity.getCityGrid()); 
+        this.cityTurnHistory.push(this.currentCity.getCityGrid());
         //Check all neighboring cells of every cell and apply update if they close, open or remain at their state
         this.currentCity.runInteractions(allowWrapping);
         //reset screen
         this.currentTurn++;
     }
-    
+
     //This is how we clear the city
     clearCity() {
-        // console.log(this.currentTurn);
-
         //We save the current grid to cityTurnHistory
-        this.cityTurnHistory.push(this.currentCity.getCityGrid()); 
+        this.cityTurnHistory.push(this.currentCity.getCityGrid());
         //clearCity
         this.currentCity.clearCity();
-        
         this.currentTurn++;
     }
 
@@ -52,27 +43,31 @@ class GameEngine {
         // console.log(this.currentTurn);
 
         //We save the current grid to cityTurnHistory
-        this.cityTurnHistory.push(this.currentCity.getCityGrid()); 
+        this.cityTurnHistory.push(this.currentCity.getCityGrid());
         //randCity
         this.currentCity.randCity();
-        
+
         this.currentTurn++;
     }
 
     //This is how we toggleCell
-    toggleCell(rowindexcell,columnindexcell) {
+    toggleCell(rowindexcell, columnindexcell) {
         //We save the current grid to cityTurnHistory
-        this.cityTurnHistory.push(this.currentCity.getCityGrid()); 
-        //toggleCell
-        this.currentCity.toggleCell(rowindexcell,columnindexcell);
+        const cityTurnToPush = this.currentCity.getCityGrid()
+
+        console.log(cityTurnToPush)
         
+        this.cityTurnHistory.push([...cityTurnToPush]);
+        //toggleCell
+        this.currentCity.toggleCell(rowindexcell, columnindexcell);
+
         this.currentTurn++;
     }
-    
-    //this is the nextTurn logic
-    previousTurn(){
 
-        if( this.currentTurn > 0 ){
+    //this is the nextTurn logic
+    previousTurn() {
+
+        if (this.currentTurn > 0) {
             // console.log(this.currentTurn);
             //We save the current grid to cityTurnHistory
             this.currentCity.setCityGrid(this.cityTurnHistory.pop());
@@ -81,12 +76,11 @@ class GameEngine {
         }
     }
 
-    goBackInTime(turns){
-        if(this.cityTurnHistory.length > 1)
-        {
-            let newCityTurnHistory = this.cityTurnHistory.slice(0, this.cityTurnHistory.length - turns );
+    goBackInTime(turns) {
+        if (this.cityTurnHistory.length > 1) {
+            let newCityTurnHistory = this.cityTurnHistory.slice(0, this.cityTurnHistory.length - turns);
             // console.log(newCityTurnHistory);
-            
+
             this.cityTurnHistory = newCityTurnHistory;
             this.currentCity.setCityGrid(this.cityTurnHistory.pop());
             this.currentTurn -= turns;
@@ -94,27 +88,27 @@ class GameEngine {
     }
 
     //get the currentCity grid
-    getCurrentCityGrid(){
+    getCurrentCityGrid() {
         return this.currentCity.getCityGrid();
     }
 
-    setCurrentCityGridFromPremade(index){
-        
+    setCurrentCityGridFromPremade(index) {
+
         //We save the current grid to cityTurnHistory
-        this.cityTurnHistory.push(this.currentCity.getCityGrid()); 
+        this.cityTurnHistory.push(this.currentCity.getCityGrid());
         this.currentCity.setCityGrid(this.getCityPremadeGrids()[PremadeGrids.length - index - 1]);
         this.currentTurn++;
     }
 
-    getCurrentCity(){
+    getCurrentCity() {
         return this.currentCity;
     }
 
-    getCityTurnHistory(){
+    getCityTurnHistory() {
         return this.cityTurnHistory;
     }
 
-    getCityPremadeGrids(){
+    getCityPremadeGrids() {
         return PremadeGrids;
     }
 }
