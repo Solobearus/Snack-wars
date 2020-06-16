@@ -5,11 +5,11 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 
 function Button(props) {
-
-  console.log(window.getComputedStyle(document.documentElement)
-    .getPropertyValue('--my-light-main'));
-
+  
   const theme = createMuiTheme({
+    typography: {
+      useNextVariants: true,
+    },
     palette: {
       primary: {
         light: window.getComputedStyle(document.documentElement)
@@ -26,7 +26,7 @@ function Button(props) {
 
   return (
     <MuiThemeProvider theme={theme}>
-      <Buttonui boxShadow={3} variant="contained" color="primary" onClick={props.click}>
+      <Buttonui boxshadow={3} variant="contained" color="primary" onClick={props.click}>
         {props.value}
       </Buttonui>
     </MuiThemeProvider>

@@ -133,7 +133,7 @@ class City {
 
         let tmp = newCityGrid[rowindexcell][columnindexcell];
         newCityGrid[rowindexcell][columnindexcell] = !tmp;
-
+        console.log(newCityGrid)
     }
 
     //sets single cell at {row, column} to the given value

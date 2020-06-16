@@ -5,7 +5,7 @@ import City from '../City/City.jsx'
 
 const SideList = (props) => {
 
-    const slicedgrids = props.grids.slice(0,5);
+    const slicedgrids = props.grids.slice(0,8);
     return (
         <div className={ style.SideList }>
             <div className={ style.display }>
