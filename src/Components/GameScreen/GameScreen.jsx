@@ -21,7 +21,7 @@ const GameScreen = (props) => {
             <div className={style.Container}>
                 <div className={style.Title}>
                     <img src={logo} alt="logo" />
-                    <h1>RAMEN WARS</h1>
+                    <h1>Snack Wars</h1>
                 </div>
                 
                 <City cityGrid={props.gameEngine.getCurrentCityGrid()} toggleCell={props.toggleCell} main={true} click={()=>{}}></City>

@@ -1,4 +1,4 @@
-# Ramen-wars 🍜
+# Restaurant-wars 
 
 
 ## About the development 

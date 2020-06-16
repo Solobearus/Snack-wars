@@ -7,7 +7,7 @@ const MainMenu = (props) => {
         <div className={ style.MainMenu }>
             <div className={style.App_header}>
 
-            <p>RAMEN WARS</p>
+            <p>Snack Wars</p>
             <img src={logo} className={style.App_logo} onClick={props.click} alt="logo" />
             <p>Click the logo to begin</p>
 
