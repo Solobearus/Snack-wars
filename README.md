@@ -1,4 +1,4 @@
-# Restaurant-wars 
+# Snack-wars 
 
 
 ## About the development 
