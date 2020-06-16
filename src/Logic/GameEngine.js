@@ -3,7 +3,6 @@ import PremadeGrids from './PremadeGrids.js'
 
 class GameEngine {
 
-    currentTurn;
     currentCity;
     cityTurnHistory;
 
@@ -13,7 +12,6 @@ class GameEngine {
 
     //Initialize Game
     initializeGame() {
-        this.currentTurn = 0;
         this.currentCity = new City();
         this.cityTurnHistory = [];
     }
@@ -26,7 +24,6 @@ class GameEngine {
         //Check all neighboring cells of every cell and apply update if they close, open or remain at their state
         this.currentCity.runInteractions(allowWrapping);
         //reset screen
-        this.currentTurn++;
     }
 
     //This is how we clear the city
@@ -35,19 +32,15 @@ class GameEngine {
         this.cityTurnHistory.push(this.currentCity.getCityGrid());
         //clearCity
         this.currentCity.clearCity();
-        this.currentTurn++;
     }
 
     //This is how we randomize the city
     randCity() {
-        // console.log(this.currentTurn);
 
         //We save the current grid to cityTurnHistory
         this.cityTurnHistory.push(this.currentCity.getCityGrid());
         //randCity
         this.currentCity.randCity();
-
-        this.currentTurn++;
     }
 
     //This is how we toggleCell
@@ -58,30 +51,25 @@ class GameEngine {
         this.cityTurnHistory.push([...cityTurnToPush]);
         //toggleCell
         this.currentCity.toggleCell(rowindexcell, columnindexcell);
-
-        this.currentTurn++;
     }
 
     //this is the nextTurn logic
     previousTurn() {
 
-        if (this.currentTurn > 0) {
-            // console.log(this.currentTurn);
+        if (this.cityTurnHistory.length > 0) {
             //We save the current grid to cityTurnHistory
             this.currentCity.setCityGrid(this.cityTurnHistory.pop());
             //reset screen
-            this.currentTurn--;
         }
     }
 
     goBackInTime(turns) {
-        if (this.cityTurnHistory.length > 1) {
+        if (this.cityTurnHistory.length > 0) {
             let newCityTurnHistory = this.cityTurnHistory.slice(0, this.cityTurnHistory.length - turns);
             // console.log(newCityTurnHistory);
 
             this.cityTurnHistory = newCityTurnHistory;
             this.currentCity.setCityGrid(this.cityTurnHistory.pop());
-            this.currentTurn -= turns;
         }
     }
 
@@ -95,7 +83,6 @@ class GameEngine {
         //We save the current grid to cityTurnHistory
         this.cityTurnHistory.push(this.currentCity.getCityGrid());
         this.currentCity.setCityGrid(this.getCityPremadeGrids()[PremadeGrids.length - index - 1]);
-        this.currentTurn++;
     }
 
     getCurrentCity() {

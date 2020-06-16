@@ -58,8 +58,6 @@ class City {
             }
             stringGrid += "],\n[";
         }
-
-        console.log(stringGrid);
     }
 
     //run one iteration on all the cells of the grid
@@ -133,7 +131,6 @@ class City {
 
         let tmp = newCityGrid[rowindexcell][columnindexcell];
         newCityGrid[rowindexcell][columnindexcell] = !tmp;
-        console.log(newCityGrid)
     }
 
     //sets single cell at {row, column} to the given value
@@ -150,7 +147,6 @@ class City {
     getNewCityGrid() {
         let newCityGrid = this.initializeCityGrid();
 
-        console.log(this.cityGrid[0][0])
         for (let i = 0; i < this.WIDTH_OF_CITY; i++) {
             for (let j = 0; j < this.HEIGHT_OF_CITY; j++) {
                 newCityGrid[i][j] = this.cityGrid[i][j]
